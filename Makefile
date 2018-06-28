@@ -13,3 +13,7 @@ all:
 
 clean:
 	rm testLaunch
+
+run:
+	# Im lazy...
+	./testLaunch "videotestsrc ! video/x-raw,width=1280,height=720 ! timeoverlay ! x264enc ! rtph264pay name=pay0 pt=96"
