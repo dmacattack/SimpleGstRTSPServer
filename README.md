@@ -43,12 +43,13 @@ $ gcc test-launch.c \
 ```
 
 ## Run the Server 
-A clock overlay is added. This is optional
+A time overlay is added. This is optional
 ```bash
-./testLaunch "videotestsrc ! video/x-raw,width=1280,height=720 ! timeoverlay ! x264enc ! rtph264pay name=pay0 pt=96"
+$ ./testLaunch "videotestsrc ! video/x-raw,width=1280,height=720 ! timeoverlay ! x264enc ! rtph264pay name=pay0 pt=96"
 ```
 
 ## Run a Client
+Run the client locally (127.0.0.1) or from another PC using the Server's IP address
 ```bash
 $ gst-launch-1.0 rtspsrc location=rtsp://127.0.0.1:8554/test latency=50 ! decodebin ! autovideosink
 ```
